@@ -74,21 +74,88 @@ else:
     cv2.waitKey(0)
 ```
 ## Output:
-![IMG](file:///C:/Users/admin/OneDrive/Pictures/Screenshots/1.png)
+![IMG](https://raw.githubusercontent.com/Girithickrohan/COLOR_CONVERSIONS_OF-IMAGE/main/1.png)
 
 ### ii)Draw Shapes and Add Text
+```
+# Step 2: Draw Shapes and Add Text
+# Draw a line from the top-left to the bottom-right
+start_point = (0, 0)
+end_point = (image.shape[1], image.shape[0])
+line_color = (255, 0, 0)  # Blue color in BGR
+thickness = 2
+image_with_line = cv2.line(image.copy(), start_point, end_point, line_color, thickness)
 
-<br>
-<br>
+# Draw a circle at the center of the image
+center_coordinates = (image.shape[1] // 2, image.shape[0] // 2)
+radius = 50
+circle_color = (0, 255, 0)  # Green color in BGR
+thickness = 3
+image_with_circle = cv2.circle(image_with_line, center_coordinates, radius, circle_color, thickness)
+
+# Draw a rectangle around a specific region of interest
+top_left = (50, 50)
+bottom_right = (200, 200)
+rectangle_color = (0, 0, 255)  # Red color in BGR
+thickness = 2
+image_with_rectangle = cv2.rectangle(image_with_circle, top_left, bottom_right, rectangle_color, thickness)
+
+# Add text to the image
+text = "OpenCV Drawing"
+org = (10, 30)  # top-left corner of the text string
+font = cv2.FONT_HERSHEY_SIMPLEX
+font_scale = 1
+text_color = (255, 255, 255)  # White color
+thickness = 2
+image_with_text = cv2.putText(image_with_rectangle, text, org, font, font_scale, text_color, thickness, cv2.LINE_AA)
+
+cv2.imshow('Image with Shapes and Text', image_with_text)
+cv2.waitKey(0)
+```
+## OUTPUT:
+![IMG](https://raw.githubusercontent.com/Girithickrohan/COLOR_CONVERSIONS_OF-IMAGE/main/2.png)
 
 ### iii)Image Color Conversion
+```
+# Step 3: Image Color Conversion
+# Convert the image from RGB to HSV and display it
+hsv_image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+cv2.imshow('HSV Image', hsv_image)
+cv2.waitKey(0)
 
-<br>
-<br>
+# Convert the image from RGB to GRAY and display it
+gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+cv2.imshow('Gray Image', gray_image)
+cv2.waitKey(0)
+
+# Convert the image from RGB to YCrCb and display it
+ycrcb_image = cv2.cvtColor(image, cv2.COLOR_BGR2YCrCb)
+cv2.imshow('YCrCb Image', ycrcb_image)
+cv2.waitKey(0)
+
+# Convert the HSV image back to RGB and display it
+hsv_to_rgb_image = cv2.cvtColor(hsv_image, cv2.COLOR_HSV2BGR)
+cv2.imshow('HSV to RGB Image', hsv_to_rgb_image)
+cv2.waitKey(0)
+```
+## OUTPUT:
+![IMG](https://raw.githubusercontent.com/Girithickrohan/COLOR_CONVERSIONS_OF-IMAGE/main/3a.png)_
+![IMG](https://raw.githubusercontent.com/Girithickrohan/COLOR_CONVERSIONS_OF-IMAGE/main/3b.png)
+![IMG](https://raw.githubusercontent.com/Girithickrohan/COLOR_CONVERSIONS_OF-IMAGE/main/3c.png)
 
 ### iv)Access and Manipulate Image Pixels
-<br>
-<br>
+```
+# Step 4: Access and Manipulate Image Pixels
+# Access and print the value of the pixel at coordinates (100, 100)
+pixel_value = image[100, 100]
+print(f"Pixel value at (100, 100): {pixel_value}")
+
+# Modify the color of the pixel at (200, 200) to white
+image[200, 200] = [255, 255, 255]
+print(f"Modified pixel value at (200, 200): {image[200, 200]}")
+```
+## OUTPUT:
+![IMG]()
 
 ### v)Image Resizing
 <br>
