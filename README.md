@@ -155,35 +155,56 @@ image[200, 200] = [255, 255, 255]
 print(f"Modified pixel value at (200, 200): {image[200, 200]}")
 ```
 ## OUTPUT:
-![IMG]()
+![IMG](https://raw.githubusercontent.com/Girithickrohan/COLOR_CONVERSIONS_OF-IMAGE/main/4.png)
 
 ### v)Image Resizing
-<br>
-<br>
+```
+# Step 5: Image Resizing
+# Resize the original image to half its size and display it
+resized_image = cv2.resize(image, (image.shape[1] // 2, image.shape[0] // 2))
+cv2.imshow('Resized Image', resized_image)
+cv2.waitKey(0)
+```
+## OUTPUT:
+![IMG](https://raw.githubusercontent.com/Girithickrohan/COLOR_CONVERSIONS_OF-IMAGE/main/5.png)
 
 ### vi)Image Cropping
-<br>
-<br>
+```
+# Step 6: Image Cropping
+# Crop a region of interest (100x100 pixels starting at (50, 50)) and display it
+roi = image[50:150, 50:150]
+cv2.imshow('Cropped ROI Image', roi)
+cv2.waitKey(0)
+```
+## OUTPUT:
+![IMG](https://raw.githubusercontent.com/Girithickrohan/COLOR_CONVERSIONS_OF-IMAGE/main/6.png)
 
 ### vii)Image Flipping
-<br>
-<br>
+```
+# Step 7: Image Flipping
+# Flip the original image horizontally and display it
+flipped_horizontally = cv2.flip(image, 1)
+cv2.imshow('Horizontally Flipped Image', flipped_horizontally)
+cv2.waitKey(0)
+
+# Flip the original image vertically and display it
+flipped_vertically = cv2.flip(image, 0)
+cv2.imshow('Vertically Flipped Image', flipped_vertically)
+cv2.waitKey(0)
+```
+## OUTPUT:
+![IMG](https://raw.githubusercontent.com/Girithickrohan/COLOR_CONVERSIONS_OF-IMAGE/main/7a.png)
+![IMG](https://raw.githubusercontent.com/Girithickrohan/COLOR_CONVERSIONS_OF-IMAGE/main/7b.png)
 
 ### viii)Write and Save the Modified Image
-<br>
-<br>
-
-
-
-
-
+```
+# Step 8: Write and Save the Modified Image
+output_path = 'output.jpg'
+cv2.imwrite(output_path, image_with_text)
+print(f"Modified image saved as {output_path}")
+```
+## OUTPUT:
+![IMG](https://raw.githubusercontent.com/Girithickrohan/COLOR_CONVERSIONS_OF-IMAGE/main/8.png)
 
 ## Result:
 Thus the images are read, displayed, and written ,and color conversion was performed  successfully using the python program.
-
-
-
-
-
-
-
