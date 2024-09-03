@@ -53,16 +53,28 @@ o	Save the final modified image to your local directory.
 
 
 ##### Program:
-### Developed By:
-### Register Number: 
+### Developed By: GIRITHICK ROHAN N
+### Register Number: 212223230063
 
 
-## Output:
+
 
 ### i)Read and Display an Image
+```
+# Step 1: Load an image from your local directory and display it
+import cv2
+image_path = 'puppies.jpg'  # Replace with your image path
+image = cv2.imread(image_path)
 
-<br>
-<br>
+# Check if the image was loaded successfully
+if image is None:
+    print("Error: Could not read the image.")
+else:
+    cv2.imshow('Original Image', image)
+    cv2.waitKey(0)
+```
+## Output:
+![IMG](file:///C:/Users/admin/OneDrive/Pictures/Screenshots/1.png)
 
 ### ii)Draw Shapes and Add Text
 
