@@ -194,6 +194,7 @@ cv2.waitKey(0)
 ```
 ## OUTPUT:
 ![IMG](https://raw.githubusercontent.com/Girithickrohan/COLOR_CONVERSIONS_OF-IMAGE/main/7a.png)
+
 ![IMG](https://raw.githubusercontent.com/Girithickrohan/COLOR_CONVERSIONS_OF-IMAGE/main/7b.png)
 
 ### viii)Write and Save the Modified Image
